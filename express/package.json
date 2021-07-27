@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "dotenv nodemon ./app.js",
     "start": "dotenv node ./app.js",
+    "populateDB": "dotenv node ./scripts/populateDB.js",
     "lint": "eslint . --fix"
   },
   "dependencies": {

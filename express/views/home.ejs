@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+	<%- include('./headers') %>
+  <body>
+    <div class="nav" id="nav" hx-target="#nav-contents" hx-push-url="true" _="on htmx:afterOnLoad take .router-link-exact-active for event.target">
+      <a href="/" class="nav-link router-link-exact-active" hx-get="/movies">Movies</a>
+      <a href="/" class="nav-link" hx-get="/post-movie">Post a Movie</a>
+      <a href="/" class="nav-link" hx-get="/about">About</a>
+    </div>
+    
+    <div id="nav-contents">
+      <%- include('./movies', { movies }) %>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+{
+  "name": "htmx-test",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "dotenv nodemon ./app.js",
+    "start": "dotenv node ./app.js",
+    "lint": "eslint . --fix"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "cookie-parser": "~1.4.4",
+    "dotenv-cli": "^4.0.0",
+    "debug": "~2.6.9",
+    "ejs": "~2.6.1",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "morgan": "~1.9.1",
+    "mongoose": "^5.12.13"
+  },
+  "devDependencies": {
+    "eslint": "^7.28.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "nodemon": "^2.0.7",
+    "prettier": "^2.3.1"
+  }
+}

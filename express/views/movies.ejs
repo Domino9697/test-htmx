@@ -1,0 +1,10 @@
+<div class="home">
+  <div class="gallery">
+    <% movies.forEach(function(movie){ %>
+    <div class="gallery-panel" hx-trigger="click" hx-target="#nav-contents" hx-get="/movies/<%= movie._id %>" hx-push-url="true">
+      <img src="<%= movie.poster_path %>" />
+      <p><%= movie.title %></p>
+    </div>
+    <% }); %>
+  </div>
+</div>

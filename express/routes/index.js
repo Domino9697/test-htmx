@@ -4,7 +4,7 @@ const { MovieModel } = require("../models/movie");
 
 /* GET home page. */
 router.get("/", async function (req, res) {
-  const movies = await MovieModel.find({});
+  const movies = await MovieModel.find({}).limit(20);
 
   res.render("home", {
     movies,

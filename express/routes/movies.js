@@ -2,12 +2,24 @@ var express = require("express");
 var router = express.Router();
 const { MovieModel } = require("../models/movie");
 
-/* GET movies listing. */
 router.get("/", async function (req, res) {
-  const movies = await MovieModel.find({});
+  const movies = await MovieModel.find({}).limit(20);
 
   res.render("movies", {
     movies,
+  });
+});
+
+router.get("/list", async function (req, res) {
+  const page = parseInt(req.query.page) ?? 0;
+
+  const movies = await MovieModel.find({})
+    .skip(page * 20)
+    .limit(20);
+
+  res.render("movieList", {
+    movies,
+    page,
   });
 });
 

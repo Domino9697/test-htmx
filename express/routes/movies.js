@@ -1,21 +1,20 @@
 var express = require("express");
-var router = express.Router();
-const { MovieModel } = require("../models/movie");
+var viewRouter = express.Router();
+var apiRouter = express.Router();
+const { getMovieList, getMovie } = require("../services/movies");
 
-router.get("/", async function (req, res) {
-  const movies = await MovieModel.find({}).limit(20);
+viewRouter.get("/", async function (req, res) {
+  const movies = await getMovieList(0);
 
   res.render("movies", {
     movies,
   });
 });
 
-router.get("/list", async function (req, res) {
+viewRouter.get("/list", async function (req, res) {
   const page = parseInt(req.query.page) ?? 0;
 
-  const movies = await MovieModel.find({})
-    .skip(page * 20)
-    .limit(20);
+  const movies = await getMovieList(page);
 
   res.render("movieList", {
     movies,
@@ -23,18 +22,38 @@ router.get("/list", async function (req, res) {
   });
 });
 
-router.get("/:movieId", async function (req, res) {
+apiRouter.get("/list", async function (req, res) {
+  const page = parseInt(req.query.page) ?? 0;
+
+  const movies = await getMovieList(page);
+
+  res.json(movies);
+});
+
+viewRouter.get("/:movieId", async function (req, res) {
   if (!req.params.movieId) {
     return res
       .status(400)
       .send("Please specify a movie id in the params of the url");
   }
 
-  const movie = await MovieModel.findOne({ _id: req.params.movieId });
+  const movie = await getMovie(req.params.movieId);
 
   res.render("movie", {
     movie,
   });
 });
 
-module.exports = router;
+apiRouter.get("/:movieId", async function (req, res) {
+  if (!req.params.movieId) {
+    return res
+      .status(400)
+      .send("Please specify a movie id in the params of the url");
+  }
+
+  const movie = await getMovie(req.params.movieId);
+
+  res.json(movie);
+});
+
+module.exports = { viewRouter, apiRouter };

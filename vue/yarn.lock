@@ -80,6 +80,11 @@
     "@vue/compiler-dom" "3.2.2"
     "@vue/shared" "3.2.2"
 
+"@vue/devtools-api@^6.0.0-beta.14":
+  version "6.0.0-beta.15"
+  resolved "https://registry.yarnpkg.com/@vue/devtools-api/-/devtools-api-6.0.0-beta.15.tgz#ad7cb384e062f165bcf9c83732125bffbc2ad83d"
+  integrity sha512-quBx4Jjpexo6KDiNUGFr/zF/2A4srKM9S9v2uHgMXSU//hjgq1eGzqkIFql8T9gfX5ZaVOUzYBP3jIdIR3PKIA==
+
 "@vue/reactivity@3.2.2":
   version "3.2.2"
   resolved "https://registry.yarnpkg.com/@vue/reactivity/-/reactivity-3.2.2.tgz#d37011a68395e038a3cf5256af52d48c591b06b6"
@@ -108,6 +113,21 @@
   version "3.2.2"
   resolved "https://registry.yarnpkg.com/@vue/shared/-/shared-3.2.2.tgz#6104185ebd57af5a14ac51c1f491b2205fc24054"
   integrity sha512-dvYb318tk9uOzHtSaT3WII/HscQSIRzoCZ5GyxEb3JlkEXASpAUAQwKnvSe2CudnF8XHFRTB7VITWSnWNLZUtA==
+
+"@vueuse/core@^6.0.0":
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/@vueuse/core/-/core-6.0.0.tgz#ebb6ad380682adc6c7d6c3be4f3e4003543845fd"
+  integrity sha512-PuBfNo/Zv+NkLcZaYWBA1WjqxQhTDC0DMQpoAIJdo/GFul/1SpBbONhUho2zqtOmq8vyGuK200wNFvyA4YUAMg==
+  dependencies:
+    "@vueuse/shared" "6.0.0"
+    vue-demi "*"
+
+"@vueuse/shared@6.0.0":
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/@vueuse/shared/-/shared-6.0.0.tgz#e6b8804541a1853615db3dd869d07653b244451f"
+  integrity sha512-PLjjqL8bxI5q86qk/ifXy572nfQE3rJc1RMem+dKcGayaagMnC4kXHEt64V98DVielSwr2FuYaeFodi4KJrvdg==
+  dependencies:
+    vue-demi "*"
 
 big.js@^5.2.2:
   version "5.2.2"
@@ -379,6 +399,18 @@ vite@^2.4.4:
     rollup "^2.38.5"
   optionalDependencies:
     fsevents "~2.3.2"
+
+vue-demi@*:
+  version "0.11.3"
+  resolved "https://registry.yarnpkg.com/vue-demi/-/vue-demi-0.11.3.tgz#dd7495b92b495ecfa35675bf024b1358a7add150"
+  integrity sha512-DpM0TTMpclRZDV6AIacgg837zrim/C9Zn+2ztXBs9hsESJN9vC83ztjTe4KC4HgJuVle8YUjPp7HTwWtwOHfmg==
+
+vue-router@4:
+  version "4.0.11"
+  resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-4.0.11.tgz#cd649a0941c635281763a20965b599643ddc68ed"
+  integrity sha512-sha6I8fx9HWtvTrFZfxZkiQQBpqSeT+UCwauYjkdOQYRvwsGwimlQQE2ayqUwuuXGzquFpCPoXzYKWlzL4OuXg==
+  dependencies:
+    "@vue/devtools-api" "^6.0.0-beta.14"
 
 vue@^3.0.5:
   version "3.2.2"

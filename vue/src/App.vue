@@ -1,13 +1,15 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3 + Vite" />
+  <div class="nav">
+    <a href="/" class="nav-link router-link-exact-active" >Movies</a>
+    <a href="/" class="nav-link">Post a Movie</a>
+    <a href="/" class="nav-link">About</a>
+  </div>
+  
+  <router-view></router-view>
 </template>
 
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
 
-// This starter template is using Vue 3 experimental <script setup> SFCs
-// Check out https://github.com/vuejs/rfcs/blob/master/active-rfcs/0040-script-setup.md
 </script>
 
 <style>
@@ -18,5 +20,23 @@ import HelloWorld from './components/HelloWorld.vue'
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+.nav {
+  text-align: center;
+  padding: 30px;
+}
+
+.nav-link {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.nav-link.router-link-exact-active {
+  color: #42b983;
+}
+
+a {
+  color: #00B7FF;
 }
 </style>

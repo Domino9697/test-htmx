@@ -65,4 +65,4 @@ const populateDB = async (pages) => {
   connection.disconnect();
 };
 
-populateDB(10);
+populateDB(100);

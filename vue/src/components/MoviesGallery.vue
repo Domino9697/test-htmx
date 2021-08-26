@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <div class="gallery">
+    <div v-if="movies.length !== 0" class="gallery">
       <div
         class="gallery-panel"
         v-for="movie in movies"

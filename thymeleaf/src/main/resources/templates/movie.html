@@ -1,0 +1,13 @@
+<div xmlns:th="http://www.w3.org/1999/xhtml">
+    <div th:object = "${movie}">
+        <h1 th:text="${movie.title}"></h1>
+        <div class="movie-info">
+            <div class="movie-image-container">
+                <img class="movie-image" th:src="${movie.poster_path}" th:alt="${movie.title}">
+            </div>
+            <div class="movie-description">
+                <p th:text = "${movie.description}"></p>
+            </div>
+        </div>
+    </div>
+</div>

@@ -54,9 +54,6 @@ const populateDB = async (pages) => {
     useUnifiedTopology: true,
   });
 
-  await MovieModel.collection.drop();
-  await GenreModel.collection.drop();
-
   await fetchGenres();
   for (let pageIndex = 1; pageIndex <= pages; pageIndex++) {
     await fetchPage(pageIndex);

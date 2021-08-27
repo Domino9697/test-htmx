@@ -2,9 +2,9 @@
 <div
   class="gallery-panel"
   hx-trigger="click"
-  hx-target="#nav-contents"
+  hx-target="body"
+  hx-swap="beforeend"
   hx-get="/movies/<%= movie._id %>"
-  hx-push-url="true"
 >
   <img src="<%= movie.poster_path %>" />
   <p><%= movie.title %></p>

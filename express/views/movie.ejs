@@ -1,9 +1,15 @@
-<h1><%= movie.title %></h1>
-<div class="movie-info">
-	<div class="movie-image-container">
-		<img class="movie-image" src="<%= movie.poster_path %>" alt="<%= movie.title %>">
-	</div>
-	<div class="movie-description">
-		<p><%= movie.description %></p>
+<div id="modal" _="on closeModal add .closing wait for animationend then remove me">
+	<div class="modal-underlay" _="on click trigger closeModal"></div>
+	<div class="modal-content">
+		<h1><%= movie.title %></h1>
+		<div class="movie-info">
+			<div class="movie-image-container">
+				<img class="movie-image" src="<%= movie.poster_path %>" alt="<%= movie.title %>">
+			</div>
+			<div class="movie-description">
+				<p><%= movie.description %></p>
+			</div>
+		</div>
+		<button _="on click trigger closeModal">Close</button>
 	</div>
 </div>

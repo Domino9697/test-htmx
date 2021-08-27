@@ -14,6 +14,7 @@
 
 <script>
 import { ref } from "@vue/reactivity";
+import { onBeforeMount } from 'vue-demi';
 const getMovie = async (movieId) => {
   const response = await fetch(`http://localhost:3000/api/movies/${movieId}`);
   const movie = await response.json();
@@ -22,18 +23,19 @@ const getMovie = async (movieId) => {
 };
 
 export default {
-  setup() {
+  props: {
+    movieId: String
+  },
+  setup({ movieId }) {
     const movie = ref(null);
 
-    return { movie };
-  },
+    onBeforeMount(async () => {
+      const movieData = await getMovie(movieId)
+      movie.value = movieData
+    })
 
-  async beforeRouteEnter(to, from, next) {
-    const movie = await getMovie(to.params.movieId);
-    next((vm) => {
-      vm.movie = movie;
-    });
-  },
+    return { movie };
+  }
 };
 </script>
 
